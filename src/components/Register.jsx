@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
 import Select from 'react-select'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 import {getRoles, postRegistro} from "../api";
 
 import '../static/stylesheets/register.css';
 
 const Register = props => {
+  const navigate = useNavigate();
   const [error, setError] = useState('');
   const [roles, setRoles] = useState([]);
   const [nombre, setNombre] = useState('');
@@ -33,7 +34,8 @@ const Register = props => {
         password: contrasena,
         roles: rolesSelect.map(el => el.label)
       });
-      alert(data);
+      alert(nombre + " registrado satisfactoriamente.");
+      navigate('/');
     } else setError('Todos los campos se deben llenar');
   }
 

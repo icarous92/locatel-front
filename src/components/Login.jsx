@@ -14,11 +14,11 @@ function Login() {
     try {
       if (user !== '' && pass !== '') {
         setError('');
-        const data = await postLogin({ nombreUsuario: user, password: pass });
+        const data = await postLogin({ nombreUsuario: user, password: pass });        
         localStorage.setItem('user', data.nombreUsuario);
         localStorage.setItem('token', `${data.bearer} ${data.token}`);
         localStorage.setItem('roles', data.authorities.map(el => el.authority));
-        navigate('/home');
+        navigate('/cuenta');
       } else setError('Todos los campos son obligatorios');
     }catch (e){
       console.log(e);

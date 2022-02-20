@@ -11,16 +11,18 @@ const RoutesContent = props => {
   const location = useLocation();
 
   useEffect(() => {
-    if (localStorage['token'] && localStorage['user'] && ['/', '/register'].indexOf(location.pathname) > -1) navigate("/home");
+    if (localStorage['token'] && localStorage['user'] && ['/', '/register'].indexOf(location.pathname) > -1) navigate("/cuenta");
   }, [location, navigate]);
 
   return (
+    <>
+    { (localStorage['token'] && localStorage['user']) && <Home /> }
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/home" element={<AuthWrapper> <Home /> </AuthWrapper>} />      
+      <Route path="/register" element={<Register />} />        
       <Route path="/cuenta" element={<AuthWrapper> <Cuenta /> </AuthWrapper>} />
     </Routes>
+    </>
   );
 }
 

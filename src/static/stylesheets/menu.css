@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.nav-item{
+    margin: 10px;
+}
+
+.nav-item a, .nav-item span{
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-item a:hover, .nav-item span:hover{
+    color: #4CAF50;
+    cursor: pointer;
+}
+
+.col i{
+    text-align: center;
+    color:white;
+    font-size: 16px;;
+}
+
+.col span{
+    text-align: center;
+    color:white;
+    font-size: 16px;;
+    text-transform: uppercase;
+}
